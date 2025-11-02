@@ -15,7 +15,6 @@ build/
 .ipynb_checkpoints
 
 # 训练输出
-work_dirs/
 *.pth
 *.ckpt
 *.pt
@@ -68,4 +67,30 @@ temp/
 !scripts/train.py
 !configs/*.py
 !data/annotations/**
+!work_dirs/cascade_rcnn_r50_fpn_8gpu/epoch_24.pth
+!work_dirs/cascade_rcnn_r50_fpn_8gpu/
+!work_dirs/cascade_rcnn_r50_fpn_8gpu/epoch_24.pth
+# Ignore everything under work_dirs by default...
+work_dirs/*
+
+# ...but keep this experiment folder
+!work_dirs/cascade_rcnn_r50_fpn_8gpu/
+
+# Inside it, ignore everything again...
+work_dirs/cascade_rcnn_r50_fpn_8gpu/*
+
+# ...except the specific checkpoint we want to track
+!work_dirs/cascade_rcnn_r50_fpn_8gpu/epoch_24.pth
+
+# --- Canonical whitelist for one checkpoint in work_dirs ---
+# Ignore everything under work_dirs by default
+work_dirs/*
+
+# Allow this experiment directory to be seen
+!work_dirs/cascade_rcnn_r50_fpn_8gpu/
+
+# Inside it, ignore everything again...
+work_dirs/cascade_rcnn_r50_fpn_8gpu/*
+
+# ...except the specific checkpoint we want to track
 !work_dirs/cascade_rcnn_r50_fpn_8gpu/epoch_24.pth
