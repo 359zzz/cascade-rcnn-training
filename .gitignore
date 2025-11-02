@@ -76,3 +76,4 @@ work_dirs/cascade_rcnn_r50_fpn_8gpu/*
 !work_dirs/cascade_rcnn_r50_fpn_8gpu/epoch_24.pth
 
 
+result.png
