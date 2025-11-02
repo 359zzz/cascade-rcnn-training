@@ -77,3 +77,4 @@ work_dirs/cascade_rcnn_r50_fpn_8gpu/*
 
 
 result.png
+output/scene_result.png
