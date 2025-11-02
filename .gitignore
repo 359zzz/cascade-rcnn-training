@@ -1,4 +1,4 @@
-# Python
+# ---------- Python ----------
 __pycache__/
 *.py[cod]
 *$py.class
@@ -11,15 +11,15 @@ ENV/
 dist/
 build/
 
-# Jupyter Notebook
+# ---------- Jupyter ----------
 .ipynb_checkpoints
 
-# 训练输出
+# ---------- Training outputs (global) ----------
 *.pth
 *.ckpt
 *.pt
 
-# 数据文件（太大，不上传）
+# ---------- Data (large, don't upload) ----------
 data/backgrounds/
 data/objects/
 data/synthetic_train/
@@ -27,7 +27,7 @@ data/synthetic_val/
 data/raw_templates/*.png
 data/raw_templates/*.jpg
 
-# 但保留目录结构
+# keep dir structure
 !data/backgrounds/.gitkeep
 !data/objects/.gitkeep
 !data/synthetic_train/.gitkeep
@@ -35,62 +35,44 @@ data/raw_templates/*.jpg
 !data/raw_templates/.gitkeep
 !data/annotations/.gitkeep
 
-# 日志
+# also track all annotations
+!data/annotations/**
+
+# ---------- Logs ----------
 *.log
 *.log.*
 
-# 系统文件
+# ---------- System ----------
 .DS_Store
 Thumbs.db
 *.swp
 *.swo
 *~
 
-# IDE
+# ---------- IDE ----------
 .vscode/
 .idea/
 *.code-workspace
 
-# 临时文件
-output/
+# ---------- Temp ----------
 tmp/
 temp/
 *.tmp
 
-# MMDetection 相关
+# ---------- MMDetection ----------
 .mim/
 
-# === Allow specific files to be tracked ===
+# ---------- Project-specific allowlist ----------
 !scripts/3_synthesize_training_data_v2_fixed.py
 !scripts/train_8gpu.sh
 !scripts/prepare_from_manual_templates.py
 !scripts/train.py
 !configs/*.py
-!data/annotations/**
-!work_dirs/cascade_rcnn_r50_fpn_8gpu/epoch_24.pth
-!work_dirs/cascade_rcnn_r50_fpn_8gpu/
-!work_dirs/cascade_rcnn_r50_fpn_8gpu/epoch_24.pth
-# Ignore everything under work_dirs by default...
+
+# ---------- work_dirs: ignore all, allow specific ckpt ----------
 work_dirs/*
-
-# ...but keep this experiment folder
 !work_dirs/cascade_rcnn_r50_fpn_8gpu/
-
-# Inside it, ignore everything again...
 work_dirs/cascade_rcnn_r50_fpn_8gpu/*
-
-# ...except the specific checkpoint we want to track
 !work_dirs/cascade_rcnn_r50_fpn_8gpu/epoch_24.pth
 
-# --- Canonical whitelist for one checkpoint in work_dirs ---
-# Ignore everything under work_dirs by default
-work_dirs/*
 
-# Allow this experiment directory to be seen
-!work_dirs/cascade_rcnn_r50_fpn_8gpu/
-
-# Inside it, ignore everything again...
-work_dirs/cascade_rcnn_r50_fpn_8gpu/*
-
-# ...except the specific checkpoint we want to track
-!work_dirs/cascade_rcnn_r50_fpn_8gpu/epoch_24.pth
